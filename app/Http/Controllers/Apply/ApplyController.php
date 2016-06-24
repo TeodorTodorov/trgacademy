@@ -51,23 +51,13 @@ $data = array (
 );
 
 
-//Mail::send([], [], function ($message) {
- // $message->to('teodorvulchev@gmail.com')
-//    ->subject('Hello world')
-    // here comes what you want
-  //  ->setBody('Hi, welcome user!');
-//});
-$mail = new PHPMailer();
-$mail->isSMTP(); // $mail->Body = $body; etc
-$mail->smtpConnect([
-    'ssl' => [
-        'verify_peer' => false,
-        'verify_peer_name' => false,
-        'allow_self_signed' => true
-    ]
-]);
-$mail->send();
-$mail->smtpClose();
+Mail::send([], [], function ($message) {
+  $message->to('teodorvulchev@gmail.com')
+  ->subject('Hello world')
+    
+   ->setBody('Hi, welcome user!' . 'name:'. $name .'Last Name:'. $last_name .'email:'. $email .'phone'. $phone. 'grade:'. $grade .'laptop'. $laptop. 'message'. $mesage);
+});
+
 
 
 
